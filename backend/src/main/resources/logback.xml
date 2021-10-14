@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>logs/console.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>logs/console.%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>60</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <pattern>%date %highlight(%-5level) [%thread] %cyan(%logger{15}) - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- On Windows machines setting withJansi to true enables ANSI
+         color code interpretation by the Jansi library. This requires
+         org.fusesource.jansi:jansi:1.8 on the class path.  Note that
+         Unix-based operating systems such as Linux and Mac OS X
+         support ANSI color codes by default. -->
+    <withJansi>true</withJansi>
+    <encoder>
+      <pattern>%date %highlight(%-5level) [%thread] %cyan(%logger{15}) - %msg %n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.zaxxer.hikari.pool.HikariPool" level="WARN" />
+
+  <logger name="slick" level="INFO" />
+
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+</configuration>
