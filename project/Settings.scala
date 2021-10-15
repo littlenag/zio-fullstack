@@ -215,8 +215,8 @@ object Settings {
     "file-loader" -> "5.1.0",
     "url-loader" -> "3.0.0",
     "postcss-loader" -> "^2.1.1",
-    "precss" -> "^3.1.2",
-    "node-sass" -> "4.12.0",
-    "sass-loader" -> "6.0.7"
+    "precss" -> "^3.1.2"
+    //"node-sass" -> "4.12.0",
+    //"sass-loader" -> "6.0.7"
   )
 }
